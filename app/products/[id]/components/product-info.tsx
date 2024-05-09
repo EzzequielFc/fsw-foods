@@ -134,6 +134,10 @@ export default function ProductInfo({
         <h3 className="font-bold">Sucos</h3>
         <ProductList products={complementaryProducts} />
       </div>
+
+      <div className="px-5 mt-6">
+        <Button className="w-full font-semibold">Adicionar à sacola</Button>
+      </div>
     </div>
   );
 }
