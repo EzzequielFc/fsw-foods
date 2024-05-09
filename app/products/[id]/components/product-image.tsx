@@ -10,7 +10,7 @@ interface ProductImageProps {
   product: Pick<Product, "name" | "imageUrl">;
 }
 
-export default async function ({ product }: ProductImageProps) {
+const ProductImage = ({ product }: ProductImageProps) => {
   const router = useRouter();
 
   const handleBackClick = () => router.back();
@@ -34,4 +34,6 @@ export default async function ({ product }: ProductImageProps) {
       </Button>
     </div>
   );
-}
+};
+
+export default ProductImage;
