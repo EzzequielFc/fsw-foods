@@ -10,7 +10,7 @@ import RestaurantList from "./components/restaurant-list";
 import Link from "next/link";
 
 const fetch = async () => {
-  const getProducts = db.product.findMany({
+  const getProducts = await db.product.findMany({
     where: {
       discountPercentage: {
         gt: 0,
@@ -26,13 +26,13 @@ const fetch = async () => {
     },
   });
 
-  const getBurguersCategory = db.category.findFirst({
+  const getBurguersCategory = await db.category.findFirst({
     where: {
       name: "Hambúrgueres",
     },
   });
 
-  const getPizzasCategory = db.category.findFirst({
+  const getPizzasCategory = await db.category.findFirst({
     where: {
       name: "Pizzas",
     },

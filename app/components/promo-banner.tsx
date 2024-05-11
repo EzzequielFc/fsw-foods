@@ -2,6 +2,7 @@ import Image, { ImageProps } from "next/image";
 
 export default function PromoBanner(props: ImageProps) {
   return (
+    // eslint-disable-next-line jsx-a11y/alt-text
     <Image
       height={0}
       width={0}
