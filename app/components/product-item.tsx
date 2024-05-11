@@ -5,6 +5,7 @@ import Image from "next/image";
 import { calculateProductTotalPrice, formatCurrency } from "../helpers/price";
 import { ArrowDownIcon } from "lucide-react";
 import Link from "next/link";
+import { cn } from "../lib/utils";
 
 interface ProductItemProps {
   product: Prisma.ProductGetPayload<{
@@ -16,14 +17,21 @@ interface ProductItemProps {
       };
     };
   }>;
+  className?: string;
 }
 
 // eslint-disable-next-line @next/next/no-async-client-component
-export default async function ProductItem({ product }: ProductItemProps) {
+export default async function ProductItem({
+  product,
+  className,
+}: ProductItemProps) {
   return (
-    <Link className="w-[150px] min-w-[150px]" href={`/products/${product.id}`}>
+    <Link
+      className={cn("w-[150px] min-w-[150px]", className)}
+      href={`/products/${product.id}`}
+    >
       <div className="w-full space-y-2 ">
-        <div className="w-full h-[150px] relative">
+        <div className="w-full aspect-square relative">
           <Image
             src={product.imageUrl}
             alt={product.name}
