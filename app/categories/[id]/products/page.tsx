@@ -1,6 +1,5 @@
 import Header from "@/app/components/header";
 import ProductItem from "@/app/components/product-item";
-import RestaurantItem from "@/app/components/restaurant-item";
 import { db } from "@/app/lib/prisma";
 import { notFound } from "next/navigation";
 
